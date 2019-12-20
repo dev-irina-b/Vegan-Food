@@ -14,10 +14,34 @@
         android:id="@+id/bottom_menu"
         android:name="com.irina.veganfood.fragments.MenuFragment"
         android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" />
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_bottom_menu_to_mealsFragment"
+            app:destination="@id/mealsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim">
+            <argument
+                android:name="mealsType"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
     <fragment
         android:id="@+id/profile"
         android:name="com.irina.veganfood.fragments.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/basket"
+        android:name="com.irina.veganfood.fragments.BasketFragment"
+        android:label="fragment_basket"
+        tools:layout="@layout/fragment_basket" />
+    <fragment
+        android:id="@+id/mealsFragment"
+        android:name="com.irina.veganfood.fragments.MealsFragment"
+        android:label="MealsFragment" >
+        <argument
+            android:name="mealsType"
+            app:argType="integer" />
+    </fragment>
 </navigation>

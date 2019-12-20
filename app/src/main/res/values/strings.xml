@@ -6,5 +6,15 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cart">cart</string>
+    <string name="kcal">Calories</string>
+    <string name="ptotein">Protein</string>
+    <string name="fat">Fat</string>
+    <string name="carbs">Carbohydrate</string>
+    <string name="addToCart">ADD TO CART</string>
+    <string name="nutrition">Nutrition Facts</string>
+    <string name="amountPerServing">Amount per serving</string>
+    <string name="content_placeholder">Hemp oil,chickpea flour,chia seeds,turmeric,coconut oil,oregano,red chili,tomatoes,vegan cheese, mushrooms,sweet bite peppers,basil</string>
+
 
 </resources>

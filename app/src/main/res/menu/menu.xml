@@ -13,8 +13,16 @@
         />
 
     <item
+        android:id="@+id/basket"
+        android:icon="@drawable/ic_basket"
+        android:title="Basket"
+        />
+
+    <item
         android:id="@+id/profile"
         android:icon="@drawable/ic_profile"
         android:title="@string/profile"
         />
+
+
 </menu>
