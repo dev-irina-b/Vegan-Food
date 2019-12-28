@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary"> #80e27e</color>
+    <color name="colorPrimary"> #4caf50</color>
     <color name="colorPrimaryDark">#087f23</color>
     <color name="colorAccent">#4caf50</color>
     <color name="materialGray200">#EEEEEE</color>
@@ -10,4 +10,9 @@
     <color name="red">#DF2F23</color>
     <color name="greyForKcal2">#5B5E61</color>
     <color name="trnspРHint">#E6141414</color>
+    <color name="forNumber">#F2FCF7F7</color>
+    <color name="profileShadow">#800F0F0F</color>
+    <color name="btnShadow">#2F4230</color>
+    <color name="badgeBg">#FF0000</color>
+
 </resources>

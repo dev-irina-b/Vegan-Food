@@ -13,15 +13,17 @@ import com.irina.veganfood.models.Category
 import kotlinx.android.synthetic.main.item_category.view.*
 
 class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.ViewHolder>(){
-    private val items = listOf(
-        Category("Salads", R.drawable.salads),
-        Category("Hot meals", R.drawable.hot_meals),
-        Category("Soups", R.drawable.soups),
-        Category("Pasta", R.drawable.pasta),
-        Category("Pizza and pitas", R.drawable.pizza_and_pitas),
-        Category("Desserts", R.drawable.desserts),
-        Category("Drinks", R.drawable.drinks)
-    )
+    companion object {
+        val items = listOf(
+            Category("Salads", R.drawable.salads),
+            Category("Hot meals", R.drawable.hot_meals),
+            Category("Soups", R.drawable.soups),
+            Category("Pasta", R.drawable.pasta),
+            Category("Pizza and pitas", R.drawable.pizza_and_pitas),
+            Category("Desserts", R.drawable.desserts),
+            Category("Drinks", R.drawable.drinks)
+        )
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         ViewHolder(
             LayoutInflater.from(parent.context).inflate(

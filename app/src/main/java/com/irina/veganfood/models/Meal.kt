@@ -2,7 +2,7 @@ package com.irina.veganfood.models
 
 import androidx.annotation.DrawableRes
 
-data class Meals(
+data class Meal(
     val title: String,
     val price: String,
     val weight: String,
@@ -14,7 +14,8 @@ data class Meals(
 
     @DrawableRes
     val drawable: Int
-) {
+)
+{
     companion object {
         const val SALADS = 1
         const val HOT_MEALS = 2

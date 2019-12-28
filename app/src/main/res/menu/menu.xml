@@ -13,9 +13,9 @@
         />
 
     <item
-        android:id="@+id/basket"
+        android:id="@+id/cart"
         android:icon="@drawable/ic_basket"
-        android:title="Basket"
+        android:title="@string/cart"
         />
 
     <item

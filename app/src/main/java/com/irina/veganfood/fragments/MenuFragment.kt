@@ -26,6 +26,8 @@ class MenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        activity!!.setTitle(R.string.menu)
+
         recycler.adapter = CategoryAdapter()
     }
 

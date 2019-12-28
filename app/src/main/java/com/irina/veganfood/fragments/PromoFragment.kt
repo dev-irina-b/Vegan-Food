@@ -21,5 +21,10 @@ class PromoFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_promo, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        activity!!.setTitle(R.string.promo)
+
+    }
 }

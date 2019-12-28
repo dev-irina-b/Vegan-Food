@@ -3,10 +3,11 @@
     <string name="profile">Profile</string>
     <string name="menu">Menu</string>
     <string name="promo">Promo</string>
+    <string name="meals">Meals</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="cart">cart</string>
+    <string name="cart">Cart</string>
     <string name="kcal">Calories</string>
     <string name="ptotein">Protein</string>
     <string name="fat">Fat</string>
@@ -15,6 +16,26 @@
     <string name="nutrition">Nutrition Facts</string>
     <string name="amountPerServing">Amount per serving</string>
     <string name="content_placeholder">Hemp oil,chickpea flour,chia seeds,turmeric,coconut oil,oregano,red chili,tomatoes,vegan cheese, mushrooms,sweet bite peppers,basil</string>
+    <string name="acquaintance">Let\'s get acquainted!</string>
+    <string name="profit">We will earn points for the order, and on the day of birth we will give pizza</string>
+    <string name="phone">Phone</string>
+    <string name="name">Name</string>
+    <string name="Address">Address</string>
+    <string name="save">Save</string>
+    <string name="saved">Changes saved successfully!</string>
+    <string name="empty_fields">All fields should be filled!</string>
+    <string name="shared_prefs_name">vegan_food_prefs</string>
+    <string name="cart_empty">Your cart is empty</string>
+    <string name="we_will_deliver">Add the product you like from the "Menu". We will deliver your order from $10</string>
+    <string name="go_to_menu">Go to menu</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="ask_all_delete">This will delete all meals from the cart</string>
+    <string name="ok">Ok</string>
+    <string name="discard">Discard</string>
+    <string name="no">No</string>
+    <string name="cancel">Cancel</string>
+    <string name="clear_cart">Clear cart?</string>
+    <string name="badge_sign">$4</string>
 
 
 </resources>

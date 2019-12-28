@@ -32,10 +32,13 @@
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
-        android:id="@+id/basket"
-        android:name="com.irina.veganfood.fragments.BasketFragment"
-        android:label="fragment_basket"
-        tools:layout="@layout/fragment_basket" />
+        android:id="@+id/cart"
+        android:name="com.irina.veganfood.fragments.CartFragment"
+        android:label="fragment_cart" >
+        <action
+            android:id="@+id/action_cart_to_bottom_menu"
+            app:destination="@id/bottom_menu" />
+    </fragment>
     <fragment
         android:id="@+id/mealsFragment"
         android:name="com.irina.veganfood.fragments.MealsFragment"
