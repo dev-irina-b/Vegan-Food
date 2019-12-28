@@ -17,12 +17,12 @@ data class Meal(
 )
 {
     companion object {
-        const val SALADS = 1
-        const val HOT_MEALS = 2
-        const val SOUPS = 3
-        const val PASTA = 4
-        const val PIZZA = 5
-        const val DESSERTS = 6
-        const val DRINKS = 7
+        const val SALADS = 0
+        const val HOT_MEALS = 1
+        const val SOUPS = 2
+        const val PASTA = 3
+        const val PIZZA = 4
+        const val DESSERTS = 5
+        const val DRINKS = 6
     }
 }

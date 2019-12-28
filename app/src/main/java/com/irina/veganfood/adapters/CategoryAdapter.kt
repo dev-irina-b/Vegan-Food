@@ -41,7 +41,7 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.ViewHolder>(){
             .load(items[position].drawable)
             .into(holder.image)
         holder.itemView.setOnClickListener {
-            val action = MenuFragmentDirections.actionBottomMenuToMealsFragment(holder.adapterPosition+1)
+            val action = MenuFragmentDirections.actionBottomMenuToMealsFragment(holder.adapterPosition)
             holder.itemView.findNavController().navigate(action)
         }
     }
