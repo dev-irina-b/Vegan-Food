@@ -68,6 +68,7 @@ fun Context.getAllOrderedMeals(): MutableList<CartItem> {
         val amount = getMealAmount(0, index)
         if(amount > 0) {
             meal.category = 0
+            meal.positionInCategory = index
             result.add(CartItem(meal, amount))
         }
     }
@@ -76,6 +77,8 @@ fun Context.getAllOrderedMeals(): MutableList<CartItem> {
         val amount = getMealAmount(1, index)
         if(amount > 0) {
             meal.category = 1
+            meal.positionInCategory = index
+
             result.add(CartItem(meal, amount))
         }
     }
@@ -84,6 +87,8 @@ fun Context.getAllOrderedMeals(): MutableList<CartItem> {
         val amount = getMealAmount(2, index)
         if(amount > 0) {
             meal.category = 2
+            meal.positionInCategory = index
+
             result.add(CartItem(meal, amount))
         }
     }
@@ -92,6 +97,8 @@ fun Context.getAllOrderedMeals(): MutableList<CartItem> {
         val amount = getMealAmount(3, index)
         if(amount > 0) {
             meal.category = 3
+            meal.positionInCategory = index
+
             result.add(CartItem(meal, amount))
         }
 
@@ -101,6 +108,8 @@ fun Context.getAllOrderedMeals(): MutableList<CartItem> {
         val amount = getMealAmount(4, index)
         if(amount > 0) {
             meal.category = 4
+            meal.positionInCategory = index
+
             result.add(CartItem(meal, amount))
         }
     }
@@ -109,6 +118,8 @@ fun Context.getAllOrderedMeals(): MutableList<CartItem> {
         val amount = getMealAmount(5, index)
         if(amount > 0) {
             meal.category = 5
+            meal.positionInCategory = index
+
             result.add(CartItem(meal, amount))
         }
     }
@@ -117,6 +128,8 @@ fun Context.getAllOrderedMeals(): MutableList<CartItem> {
         val amount = getMealAmount(6, index)
         if(amount > 0) {
             meal.category = 6
+            meal.positionInCategory = index
+
             result.add(CartItem(meal, amount))
         }
     }

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.irina.veganfood.R
 import com.irina.veganfood.models.Meal
+import com.irina.veganfood.utils.getMealAmount
 import com.irina.veganfood.utils.getSPE
 import kotlinx.android.synthetic.main.item_meal.view.*
 
@@ -108,6 +109,20 @@ class MealsAdapter(private val mealType: Int, private val context: Context, priv
                 .with(holder.image.context)
                 .load(drawable)
                 .into(holder.image)
+
+            val mealAmount = context.getMealAmount(mealType, position)
+            if(mealAmount > 0) {
+                holder.btnText.visibility = View.GONE
+                holder.minus.visibility = View.VISIBLE
+                holder.plus.visibility = View.VISIBLE
+                holder.number.visibility = View.VISIBLE
+                holder.number.text = mealAmount.toString()
+            } else {
+                holder.btnText.visibility = View.VISIBLE
+                holder.minus.visibility = View.GONE
+                holder.plus.visibility = View.GONE
+                holder.number.visibility = View.GONE
+            }
 
             holder.info.setOnClickListener {
                 holder.infoLayout.visibility =

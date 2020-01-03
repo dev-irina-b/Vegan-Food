@@ -26,4 +26,5 @@ data class Meal(
     }
 
     var category = -1
+    var positionInCategory = -1
 }

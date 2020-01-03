@@ -43,23 +43,23 @@ class CartAdapter(private val context: Context, private val badgeCallback: () ->
                 .into(holder.image)
 
             holder.minus.setOnClickListener {
-                val currentNumber = holder.number.text.toString().toInt()
+                val currentNumber = amount
                 if(currentNumber > 1){
                     holder.number.text = (currentNumber-1).toString()
-                    setMealAmount(meal.category, holder.adapterPosition, currentNumber-1)
+                    setMealAmount(meal.category, meal.positionInCategory, currentNumber-1)
                 } else {
                     val index = items.indexOf(this)
                     items.removeAt(index)
                     notifyItemRemoved(index)
-                    setMealAmount(meal.category, holder.adapterPosition, 0)
+                    setMealAmount(meal.category, meal.positionInCategory, 0)
                 }
             }
 
             holder.plus.setOnClickListener {
-                val currentNumber = holder.number.text.toString().toInt()
+                val currentNumber = amount
                 if(currentNumber < 100){
                     holder.number.text = (currentNumber+1).toString()
-                    setMealAmount(meal.category, holder.adapterPosition, currentNumber+1)
+                    setMealAmount(meal.category, meal.positionInCategory, currentNumber+1)
                 }
             }
         }
