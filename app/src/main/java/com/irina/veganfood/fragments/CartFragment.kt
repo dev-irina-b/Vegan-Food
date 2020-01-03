@@ -1,21 +1,23 @@
 package com.irina.veganfood.fragments
 
-
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.irina.veganfood.MainActivity
 import com.irina.veganfood.R
 import com.irina.veganfood.adapters.CartAdapter
 import com.irina.veganfood.utils.deleteAllCartItems
+import com.irina.veganfood.utils.getAllOrderedMeals
+import com.irina.veganfood.utils.getPrice
 import kotlinx.android.synthetic.main.fragment_cart.*
-
 
 class CartFragment : Fragment() {
 
-    private val adapter by lazy { CartAdapter(context!!) }
+    private val mainActivity by lazy { activity!! as MainActivity }
+    private val adapter by lazy { CartAdapter(context!!) { updateBadge() } }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +43,15 @@ class CartFragment : Fragment() {
 
     }
 
+    private fun updateBadge() {
+        var price = 0
+        mainActivity.getAllOrderedMeals().forEach {
+            price += it.amount * it.meal.price.getPrice()
+        }
+        mainActivity.badge.text = "$$price"
+        mainActivity.badge.visibility = if(price > 0) View.VISIBLE else View.GONE
+    }
+
     private fun checkViewsVisibility() {
         if(adapter.itemCount > 0) {
             recycler.visibility = View.VISIBLE
@@ -62,11 +73,10 @@ class CartFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.cart_menu_delete) {
-
             AlertDialog.Builder(activity!!, R.style.AlertDialog)
                 .setTitle(getString(R.string.clear_cart))
                 .setMessage(R.string.ask_all_delete)
-                .setPositiveButton(getString(R.string.discard)) { dialog: DialogInterface, _: Int ->
+                .setPositiveButton(getString(R.string.delete)) { dialog: DialogInterface, _: Int ->
                     clearAll()
                     dialog.dismiss()
                 }

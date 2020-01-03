@@ -32,6 +32,7 @@
     <string name="ask_all_delete">This will delete all meals from the cart</string>
     <string name="ok">Ok</string>
     <string name="discard">Discard</string>
+    <string name="delete">Delete</string>
     <string name="no">No</string>
     <string name="cancel">Cancel</string>
     <string name="clear_cart">Clear cart?</string>

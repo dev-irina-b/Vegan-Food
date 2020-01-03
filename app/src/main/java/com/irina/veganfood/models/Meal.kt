@@ -11,7 +11,6 @@ data class Meal(
     val protein: String,
     val fat: String,
     val carbs: String,
-
     @DrawableRes
     val drawable: Int
 )
@@ -25,4 +24,6 @@ data class Meal(
         const val DESSERTS = 5
         const val DRINKS = 6
     }
+
+    var category = -1
 }

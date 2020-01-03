@@ -38,25 +38,25 @@ fun Context.getMealAmount(category: Int, meal: Int) = getSP().getInt("Meal_${cat
 fun Context.deleteAllCartItems() {
     val editor = getSPE()
     MealsAdapter.salads.forEachIndexed { index, meal ->
-        editor.remove("Meal_1_$index")
+        editor.remove("Meal_0_$index")
     }
     MealsAdapter.hotMeals.forEachIndexed { index, meal ->
-        editor.remove("Meal_2_$index")
+        editor.remove("Meal_1_$index")
     }
     MealsAdapter.soups.forEachIndexed { index, meal ->
-        editor.remove("Meal_3_$index")
+        editor.remove("Meal_2_$index")
     }
     MealsAdapter.pasta.forEachIndexed { index, meal ->
-        editor.remove("Meal_4_$index")
+        editor.remove("Meal_3_$index")
     }
     MealsAdapter.pizza.forEachIndexed { index, meal ->
-        editor.remove("Meal_5_$index")
+        editor.remove("Meal_4_$index")
     }
     MealsAdapter.desserts.forEachIndexed { index, meal ->
-        editor.remove("Meal_6_$index")
+        editor.remove("Meal_5_$index")
     }
     MealsAdapter.drinks.forEachIndexed { index, meal ->
-        editor.remove("Meal_7_$index")
+        editor.remove("Meal_6_$index")
     }
 
     editor.apply()
@@ -66,44 +66,59 @@ fun Context.getAllOrderedMeals(): MutableList<CartItem> {
 
     MealsAdapter.salads.forEachIndexed { index, meal ->
         val amount = getMealAmount(0, index)
-        if(amount > 0)
+        if(amount > 0) {
+            meal.category = 0
             result.add(CartItem(meal, amount))
+        }
     }
 
     MealsAdapter.hotMeals.forEachIndexed { index, meal ->
         val amount = getMealAmount(1, index)
-        if(amount > 0)
+        if(amount > 0) {
+            meal.category = 1
             result.add(CartItem(meal, amount))
+        }
     }
 
     MealsAdapter.soups.forEachIndexed { index, meal ->
         val amount = getMealAmount(2, index)
-        if(amount > 0)
+        if(amount > 0) {
+            meal.category = 2
             result.add(CartItem(meal, amount))
+        }
     }
 
     MealsAdapter.pasta.forEachIndexed { index, meal ->
         val amount = getMealAmount(3, index)
-        if(amount > 0)
+        if(amount > 0) {
+            meal.category = 3
             result.add(CartItem(meal, amount))
+        }
+
     }
 
     MealsAdapter.pizza.forEachIndexed { index, meal ->
         val amount = getMealAmount(4, index)
-        if(amount > 0)
+        if(amount > 0) {
+            meal.category = 4
             result.add(CartItem(meal, amount))
+        }
     }
 
     MealsAdapter.desserts.forEachIndexed { index, meal ->
         val amount = getMealAmount(5, index)
-        if(amount > 0)
+        if(amount > 0) {
+            meal.category = 5
             result.add(CartItem(meal, amount))
+        }
     }
 
     MealsAdapter.drinks.forEachIndexed { index, meal ->
         val amount = getMealAmount(6, index)
-        if(amount > 0)
+        if(amount > 0) {
+            meal.category = 6
             result.add(CartItem(meal, amount))
+        }
     }
 
     return result

@@ -3,15 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="8dp">
+    android:layout_height="80dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="2dp"
+    android:background="@drawable/cart_bg_drawable">
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,17 +24,21 @@
 
     <TextView
         android:id="@+id/title"
+        style="@style/NameTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:text="TextView"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textAlignment="viewStart"
         app:layout_constrainedWidth="true"
         app:layout_constraintEnd_toStartOf="@+id/btnAdd"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/image"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Banana oatmeal with blueberries, chocolate and apple" />
 
     <TextView
         android:id="@+id/price"
@@ -41,8 +49,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:text="TextView"
-        app:layout_constrainedWidth="true"
         app:layout_constrainedHeight="true"
+        app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btnAdd"
         app:layout_constraintHorizontal_bias="0.0"
@@ -52,23 +60,20 @@
 
     <View
         android:id="@+id/btnAdd"
-        android:layout_width="0dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="105dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="85dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
-        android:background="@color/colorAccent"
+        android:background="@drawable/cart_btn_drawable"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@id/title"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/minus"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
@@ -84,7 +89,7 @@
         android:layout_height="wrap_content"
         android:text="1"
         android:textColor="#CCF8F4F4"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@id/btnAdd"
         app:layout_constraintEnd_toEndOf="@id/btnAdd"
@@ -95,9 +100,9 @@
     <ImageView
         android:id="@+id/plus"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="10dp"
         android:adjustViewBounds="true"
         android:visibility="visible"
