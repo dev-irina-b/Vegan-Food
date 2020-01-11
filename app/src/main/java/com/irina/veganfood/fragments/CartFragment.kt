@@ -82,6 +82,7 @@ class CartFragment : Fragment() {
         adapter.updateItems()
         adapter.notifyDataSetChanged()
         checkViewsVisibility()
+        mainActivity.updateBadge()
     }
 
 }
