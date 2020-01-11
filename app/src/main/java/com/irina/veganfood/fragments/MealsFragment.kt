@@ -9,8 +9,6 @@ import androidx.navigation.fragment.navArgs
 import com.irina.veganfood.MainActivity
 import com.irina.veganfood.R
 import com.irina.veganfood.adapters.MealsAdapter
-import com.irina.veganfood.utils.getAllOrderedMeals
-import com.irina.veganfood.utils.getPrice
 import kotlinx.android.synthetic.main.fragment_menu.*
 
 class MealsFragment : Fragment() {
@@ -28,17 +26,8 @@ class MealsFragment : Fragment() {
         mainActivity.setTitle(R.string.meals)
 
         recycler.adapter = MealsAdapter(args.mealsType, context!!) {
-            updateBadge()
+            mainActivity.updateBadge()
         }
-    }
-
-    private fun updateBadge() {
-        var price = 0
-        mainActivity.getAllOrderedMeals().forEach {
-            price += it.amount * it.meal.price.getPrice()
-        }
-        mainActivity.badge.text = "$$price"
-        mainActivity.badge.visibility = if(price > 0) View.VISIBLE else View.GONE
     }
 
 }

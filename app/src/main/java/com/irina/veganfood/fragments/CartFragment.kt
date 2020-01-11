@@ -10,14 +10,12 @@ import com.irina.veganfood.MainActivity
 import com.irina.veganfood.R
 import com.irina.veganfood.adapters.CartAdapter
 import com.irina.veganfood.utils.deleteAllCartItems
-import com.irina.veganfood.utils.getAllOrderedMeals
-import com.irina.veganfood.utils.getPrice
 import kotlinx.android.synthetic.main.fragment_cart.*
 
 class CartFragment : Fragment() {
 
     private val mainActivity by lazy { activity!! as MainActivity }
-    private val adapter by lazy { CartAdapter(context!!) { updateBadge() } }
+    private val adapter by lazy { CartAdapter(context!!) { mainActivity.updateBadge() } }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,15 +39,6 @@ class CartFragment : Fragment() {
             findNavController().navigate(R.id.action_cart_to_bottom_menu)
         }
 
-    }
-
-    private fun updateBadge() {
-        var price = 0
-        mainActivity.getAllOrderedMeals().forEach {
-            price += it.amount * it.meal.price.getPrice()
-        }
-        mainActivity.badge.text = "$$price"
-        mainActivity.badge.visibility = if(price > 0) View.VISIBLE else View.GONE
     }
 
     private fun checkViewsVisibility() {
