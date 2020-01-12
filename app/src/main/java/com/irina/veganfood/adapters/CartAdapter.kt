@@ -47,11 +47,13 @@ class CartAdapter(private val context: Context, private val badgeCallback: () ->
                 if(currentNumber > 1){
                     holder.number.text = (currentNumber-1).toString()
                     setMealAmount(meal.category, meal.positionInCategory, currentNumber-1)
+                    amount--
                 } else {
                     val index = items.indexOf(this)
                     items.removeAt(index)
                     notifyItemRemoved(index)
                     setMealAmount(meal.category, meal.positionInCategory, 0)
+                    amount = 0
                 }
             }
 
@@ -60,6 +62,7 @@ class CartAdapter(private val context: Context, private val badgeCallback: () ->
                 if(currentNumber < 100){
                     holder.number.text = (currentNumber+1).toString()
                     setMealAmount(meal.category, meal.positionInCategory, currentNumber+1)
+                    amount++
                 }
             }
         }
