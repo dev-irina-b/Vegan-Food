@@ -85,4 +85,6 @@ class CartFragment : Fragment() {
         mainActivity.updateBadge()
     }
 
+
+
 }

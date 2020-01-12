@@ -13,6 +13,7 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.irina.veganfood.R
 import com.irina.veganfood.utils.getAllOrderedMeals
+import com.irina.veganfood.utils.getPrice
 import com.irina.veganfood.utils.getSPE
 import kotlinx.android.synthetic.main.item_cart.view.*
 
@@ -32,7 +33,7 @@ class CartAdapter(private val context: Context, private val badgeCallback: () ->
     override fun onBindViewHolder(holder:ViewHolder, position: Int) {
         items[position].apply {
             holder.title.text = meal.title
-            holder.price.text = meal.price
+            holder.price.text = "$" + meal.price.getPrice()*amount
             holder.amount.text = amount.toString()
             val radius = context.resources.getDimensionPixelSize(R.dimen.glide_radius)
             Glide
@@ -48,6 +49,7 @@ class CartAdapter(private val context: Context, private val badgeCallback: () ->
                     holder.number.text = (currentNumber-1).toString()
                     setMealAmount(meal.category, meal.positionInCategory, currentNumber-1)
                     amount--
+                    holder.price.text = "$" + (amount*meal.price.getPrice())
                 } else {
                     val index = items.indexOf(this)
                     items.removeAt(index)
@@ -63,8 +65,10 @@ class CartAdapter(private val context: Context, private val badgeCallback: () ->
                     holder.number.text = (currentNumber+1).toString()
                     setMealAmount(meal.category, meal.positionInCategory, currentNumber+1)
                     amount++
+                    holder.price.text = "$" + (amount*meal.price.getPrice())
                 }
             }
+
         }
     }
 
@@ -88,4 +92,6 @@ class CartAdapter(private val context: Context, private val badgeCallback: () ->
         val plus: ImageView = view.plus
         val number: TextView = view.number
     }
+
+
 }
