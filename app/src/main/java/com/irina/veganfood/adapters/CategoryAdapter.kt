@@ -39,6 +39,7 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.ViewHolder>(){
         Glide
             .with(holder.image.context)
             .load(items[position].drawable)
+            .centerCrop()
             .into(holder.image)
         holder.itemView.setOnClickListener {
             val action = MenuFragmentDirections.actionBottomMenuToMealsFragment(holder.adapterPosition)

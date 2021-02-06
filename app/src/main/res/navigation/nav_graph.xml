@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/bottom_menu">
 
@@ -9,12 +8,12 @@
         android:id="@+id/promo"
         android:name="com.irina.veganfood.fragments.PromoFragment"
         android:label="fragment_promo"
-        tools:layout="@layout/fragment_promo" />
+         />
     <fragment
         android:id="@+id/bottom_menu"
         android:name="com.irina.veganfood.fragments.MenuFragment"
         android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" >
+         >
         <action
             android:id="@+id/action_bottom_menu_to_mealsFragment"
             app:destination="@id/mealsFragment"
@@ -30,7 +29,7 @@
         android:id="@+id/profile"
         android:name="com.irina.veganfood.fragments.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        />
     <fragment
         android:id="@+id/cart"
         android:name="com.irina.veganfood.fragments.CartFragment"
@@ -38,6 +37,9 @@
         <action
             android:id="@+id/action_cart_to_bottom_menu"
             app:destination="@id/bottom_menu" />
+        <action
+            android:id="@+id/action_cart_to_placeOrderFragment"
+            app:destination="@id/placeOrderFragment" />
     </fragment>
     <fragment
         android:id="@+id/mealsFragment"
@@ -47,4 +49,9 @@
             android:name="mealsType"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/placeOrderFragment"
+        android:name="com.irina.veganfood.fragments.PlaceOrderFragment"
+        android:label="fragment_place_order"
+        />
 </navigation>

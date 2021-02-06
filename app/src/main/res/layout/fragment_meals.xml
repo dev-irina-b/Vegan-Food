@@ -8,4 +8,5 @@
     android:background="@color/materialGray200"
     tools:context=".fragments.MenuFragment"
     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    android:layout_marginTop="?actionBarSize"
     tools:listitem="@layout/item_meal"/>

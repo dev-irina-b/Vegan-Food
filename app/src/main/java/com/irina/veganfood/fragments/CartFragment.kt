@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.irina.veganfood.MainActivity
@@ -30,6 +31,13 @@ class CartFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         activity!!.setTitle(R.string.cart)
+        mainActivity.supportActionBar?.setDisplayHomeAsUpEnabled(false)
+
+        activity!!.window.apply {
+            (activity!! as AppCompatActivity).supportActionBar?.show()
+            clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
+            addFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN)
+        }
 
         recycler.adapter = adapter
 
@@ -38,12 +46,18 @@ class CartFragment : Fragment() {
         btn.setOnClickListener {
             findNavController().navigate(R.id.action_cart_to_bottom_menu)
         }
+        placeOrder.setOnClickListener {
+            findNavController().navigate(R.id.action_cart_to_placeOrderFragment)
+        }
+
+
 
     }
 
     private fun checkViewsVisibility() {
         if(adapter.itemCount > 0) {
             recycler.visibility = View.VISIBLE
+            placeOrder.visibility = View.VISIBLE
             title.visibility = View.GONE
             text2.visibility = View.GONE
             btn.visibility = View.GONE
@@ -52,6 +66,7 @@ class CartFragment : Fragment() {
             text2.visibility = View.VISIBLE
             btn.visibility = View.VISIBLE
             recycler.visibility = View.GONE
+            placeOrder.visibility = View.GONE
         }
     }
 

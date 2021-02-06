@@ -91,6 +91,7 @@ class CartAdapter(private val context: Context, private val badgeCallback: () ->
         val minus: ImageView = view.minus
         val plus: ImageView = view.plus
         val number: TextView = view.number
+
     }
 
 

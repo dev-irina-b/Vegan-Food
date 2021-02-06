@@ -14,5 +14,6 @@
     <color name="profileShadow">#800F0F0F</color>
     <color name="btnShadow">#2F4230</color>
     <color name="badgeBg">#FF0000</color>
+    <color name="dotDefault">#eecccccc</color>
 
 </resources>

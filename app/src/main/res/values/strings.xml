@@ -17,7 +17,7 @@
     <string name="amountPerServing">Amount per serving</string>
     <string name="content_placeholder">Hemp oil,chickpea flour,chia seeds,turmeric,coconut oil,oregano,red chili,tomatoes,vegan cheese, mushrooms,sweet bite peppers,basil</string>
     <string name="acquaintance">Let\'s get acquainted!</string>
-    <string name="profit">We will earn points for the order, and on the day of birth we will give pizza</string>
+    <string name="profit">You will receive points for each order and free pizza on your birthday</string>
     <string name="phone">Phone</string>
     <string name="name">Name</string>
     <string name="Address">Address</string>
@@ -37,6 +37,12 @@
     <string name="cancel">Cancel</string>
     <string name="clear_cart">Clear cart?</string>
     <string name="badge_sign">$4</string>
+    <string name="place_order">Place order</string>
+    <string name="delivery">Delivery</string>
+    <string name="payment">Payment: by cash to the courier</string>
+    <string name="time">Delivery time: under 30 min</string>
+    <string name="total_price">Total price:</string>
+    <string name="welcome">Welcome to the family!</string>
 
 
 </resources>

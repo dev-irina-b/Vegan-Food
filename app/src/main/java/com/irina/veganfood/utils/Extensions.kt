@@ -31,9 +31,9 @@ fun Fragment.saveProfileInfo(name: String, phone: String, address: String) {
         .apply()
 }
 
-fun Fragment.getProfileName() = getSP().getString("name", "")
-fun Fragment.getProfilePhone() = getSP().getString("phone", "")
-fun Fragment.getProfileAddress() = getSP().getString("address", "")
+fun Fragment.getProfileName() = getSP().getString("name", "")!!
+fun Fragment.getProfilePhone() = getSP().getString("phone", "")!!
+fun Fragment.getProfileAddress() = getSP().getString("address", "")!!
 fun Context.getMealAmount(category: Int, meal: Int) = getSP().getInt("Meal_${category}_$meal", 0)
 fun Context.deleteAllCartItems() {
     val editor = getSPE()

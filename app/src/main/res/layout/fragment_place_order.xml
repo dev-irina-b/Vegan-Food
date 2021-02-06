@@ -10,63 +10,16 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="?actionBarSize"
-        android:animateLayoutChanges="true"
         android:background="@color/materialGray200"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        tools:context=".fragments.ProfileFragment">
+        tools:context=".fragments.PlaceOrderFragment">
 
-        <requestFocus />
+        <requestFocus/>
 
 
-        <TextView
-            android:id="@+id/acquaintance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="64dp"
-            android:fontFamily="@font/roboto"
-            android:text="@string/acquaintance"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/welcome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="64dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="64dp"
-            android:fontFamily="@font/roboto"
-            android:text="@string/welcome"
-            android:textColor="@color/black"
-            android:textSize="22sp"
-            android:visibility="visible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/acquaintance" />
-
-        <TextView
-            android:id="@+id/profit"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="34dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="34dp"
-            android:text="@string/profit"
-            android:textAlignment="center"
-            android:textColor="@color/profileShadow"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/welcome" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/name"
@@ -78,7 +31,7 @@
             android:layout_marginEnd="34dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/profit">
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 style="@style/AppTextInputEditText"
@@ -133,8 +86,44 @@
                 android:singleLine="true" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:id="@+id/payment"
+            style="@style/NameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/payment"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address" />
+
+        <TextView
+            android:id="@+id/time"
+            style="@style/NameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/time"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/payment" />
+
+        <TextView
+            android:id="@+id/totalPrice"
+            style="@style/NameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/total_price"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/time" />
+
         <Button
-            android:id="@+id/save"
+            android:id="@+id/placeOrder"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="34dp"
@@ -142,15 +131,22 @@
             android:layout_marginEnd="34dp"
             android:layout_marginBottom="16dp"
             android:background="@color/colorAccent"
-            android:text="@string/save"
+            android:text="@string/place_order"
             android:textColor="@color/white"
             app:layout_constrainedHeight="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/address"
+            app:layout_constraintTop_toBottomOf="@id/totalPrice"
             app:layout_constraintVertical_bias="1.0" />
 
 
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </ScrollView>
+
+
+
